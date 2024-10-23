@@ -33,11 +33,7 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
-
-        <!-- Botão para ir para a página de cadastro -->
         <a href="index.php?controller=pessoa&action=cadastrar" class="button">Adicionar Nova Pessoa</a>
-
-        <!-- Botão para sortear uma pessoa -->
         <a href="index.php?controller=pessoa&action=sortear" class="button">Sortear Pessoa</a>
     </div>
 
