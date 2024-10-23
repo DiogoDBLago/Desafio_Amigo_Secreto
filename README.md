@@ -91,6 +91,6 @@ Se você já tem dados que deseja incluir no banco de dados, siga estas etapas p
 ### 5. Rodar o projeto
 - Com o servidor Apache rodando no Laragon e o banco de dados configurado, você pode acessar o projeto pelo navegador em:
   	```bash
-    http://localhost/Desafio_Amigo_Secreto/index.php
+    http://localhost/Desafio
     ```
 
