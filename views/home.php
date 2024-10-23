@@ -10,18 +10,14 @@
     <div class="container">
         <h1>Lista de Pessoas</h1>
 
-        <!-- Campo de busca -->
         <form method="GET" action="index.php">
             <input type="hidden" name="controller" value="pessoa">
             <input type="hidden" name="action" value="listar">
             <input type="text" name="termo" placeholder="Buscar por nome ou email" value="<?php echo isset($_GET['termo']) ? htmlspecialchars($_GET['termo']) : ''; ?>" required>
             <button type="submit" class="button">Buscar</button>
-            <!-- Botão Limpar Filtro -->
             <a href="index.php?controller=pessoa&action=listar" class="button">Limpar Filtro</a>
         </form>
 
-
-        <!-- Tabela de pessoas -->
         <table>
             <thead>
                 <tr>
