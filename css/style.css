@@ -1,0 +1,73 @@
+*{
+    font-size: 1rem;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e9ecef; /* Um cinza suave */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px; /* Largura máxima do container */
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Bordas arredondadas */
+}
+
+h1 {
+    text-align: center;
+    color: #343a40; /* Um cinza escuro */
+    margin-bottom: 20px; /* Espaçamento inferior */
+    font-size: 2em; /* Aumenta o tamanho do texto */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th {
+    background-color: #007bff; /* Azul */
+    color: white; /* Texto branco */
+    padding: 12px; /* Preenchimento maior */
+    font-size: 1.1em; /* Aumenta o tamanho do texto */
+}
+
+td {
+    padding: 12px; /* Preenchimento maior */
+    border-bottom: 1px solid #ddd; /* Linha inferior */
+}
+
+tr:hover {
+    background-color: #f1f1f1; /* Cor de fundo ao passar o mouse */
+}
+
+button, a.button {
+    display: inline-block;
+    background-color: #007bff; /* Azul */
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    border:none;
+    margin: 10px 0;
+    transition: background-color 0.3s; /* Transição suave */
+}
+
+button:hover, a.button:hover {
+    background-color: #0056b3; /* Azul mais escuro */
+
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0; /* Adiciona preenchimento */
+    background-color: #343a40; /* Cinza escuro */
+    color: white; /* Texto branco */
+}
