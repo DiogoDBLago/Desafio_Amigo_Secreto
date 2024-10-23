@@ -49,7 +49,7 @@ git clone https://github.com/DiogoDBLago/Desafio_Amigo_Secreto.git
 ```bash
 docker ps
 ```
-- Caso o contêiner não esteja e, execução, inicie-o com o seguinte comando:
+- Caso o contêiner não esteja em execução, inicie-o com o seguinte comando:
 ```bash
 docker start mysql-container
 ```
@@ -66,18 +66,31 @@ Após clonar o repositório e configurar o Docker, use o Laragon para iniciar o 
 - No Laragon, verifique se o MySQL e o PHP estão funcionando corretamente.
 - Acesse http://localhost/Desafio no navegador para abrir o projeto.
 
-## 4. Importe o banco de dados
-- Dentro do seu contêiner MySQL, crie as tabelas necessárias com as seguintes queries:
-```bash
-CREATE DATABASE amigo_secreto;
-USE amigo_secreto;
+### 4. Importação do banco de dados
+Se você já tem dados que deseja incluir no banco de dados, siga estas etapas para importá-los:
 
-CREATE TABLE pessoas (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL
-);
-```
-## 5. Acesse o sistema
-Abra o navegador e acesse http://localhost para começar a usar o sistema de amigo secreto.
+#### 1. **Crie um Dump do Banco de Dados**:
+   - Se você possui um banco de dados existente, faça um dump dos dados com o seguinte comando:
+
+   ```bash
+   mysqldump -u root -p amigo_secreto > amigo_secreto_dump.sql
+   ```
+#### 2. **Importe o Dump no Novo Banco de Dados**:
+   - Após criar o dump, você pode importar os dados no contêiner do MySQL em execução. Primeiro, acesse o MySQL dentro do contêiner com o seguinte comando:
+
+   ```bash
+   docker exec -it mysql-container mysql -u root -p amigo_secreto < amigo_secreto_dump.sql
+   ```
+#### 3. **Verifique as Tabelas**:
+   - Após a importação, você pode verificar se a tabela `pessoas` foi criada corretamente e se os dados foram importados. Acesse o MySQL dentro do contêiner e use os comandos:
+
+   ```sql
+   SHOW TABLES;
+   SELECT * FROM pessoas;
+   ```
+### 5. Rodar o projeto
+- Com o servidor Apache rodando no Laragon e o banco de dados configurado, você pode acessar o projeto pelo navegador em:
+  	```bash
+    http://localhost/Desafio_Amigo_Secreto/index.php
+    ```
 
