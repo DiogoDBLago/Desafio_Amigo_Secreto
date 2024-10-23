@@ -4,7 +4,7 @@ class PessoaModel {
 
     public function __construct() {
         // Conexão com o banco de dados
-        $this->db = new PDO('mysql:host=localhost;dbname=amigo_secreto', 'root', '');
+        $this->db = new PDO('mysql:host=localhost;dbname=amigo_secreto', 'root', 'root');
     }
 
     public function buscarPessoas($termo) {
